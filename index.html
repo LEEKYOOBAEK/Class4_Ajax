@@ -32,11 +32,16 @@
     } else {
       fetchPage('welcome');
     }
-    fetch(list).then(function (response) {
+    fetch('list').then(function (response) {
       response.text().then(function (text) {
         document.querySelector('#nav').innerHTML = text;
       })
     });
+    if (location.hash) {
+      fetchPage(location.hash.substr(2));
+    } else {
+      fetchPage('welcome');
+    }
   </script>
 </body>
 
