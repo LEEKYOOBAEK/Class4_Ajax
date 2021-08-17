@@ -23,6 +23,7 @@
       fetch('css').then(function(response){
         response.text().then(function(text){
           document.querySelector('article').innerHTML = text;
+          console.log('hi');
         })
       });
     ">CSS</a></li>
@@ -37,6 +38,5 @@
   <article>
  
   </article>
-  </p>
 </body>
 </html>

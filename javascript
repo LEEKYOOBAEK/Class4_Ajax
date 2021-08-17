@@ -1,1 +1,1 @@
-<h2>javascript</h2> 노잼
+<h2>javascript</h2> 노잼console.log('bye')
