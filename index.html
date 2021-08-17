@@ -34,14 +34,26 @@
     }
     fetch('list').then(function (response) {
       response.text().then(function (text) {
-        document.querySelector('#nav').innerHTML = text;
+        console.log(text);
+        var items = text.split(',');
+        var i = 0;
+        var tags = '';
+        while(i<items.length){
+          var item = items[i];
+          console.log(item);
+          item = item.trim();
+          console.log(item);
+          //<li><a href="#!html" onclick="fetchPage('html')">html</a><li>
+          var tag = '<li><a href="#!'+item+'" onclick="fetchPage(\''+item+'\')">' + item + '</a></li>';
+          console.log(tag);
+          tags = tags + tag;
+          i = i + 1;
+        }
+        console.log(items);
+        document.querySelector('#nav').innerHTML = tags;
       })
     });
-    if (location.hash) {
-      fetchPage(location.hash.substr(2));
-    } else {
-      fetchPage('welcome');
-    }
+
   </script>
 </body>
 
