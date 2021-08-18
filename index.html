@@ -10,20 +10,24 @@
 </head>
 
 <body>
-  <!-- Facebooklogin -->
+  <div id="fb-root"></div>
   <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId            : '4155753817876776',
-        autoLogAppEvents : true,
-        xfbml            : true,
-        version          : 'v11.0'
-        
-      });
-    };
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.9&appId=4155753817876776";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
   </script>
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-      
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v11.0&appId=4155753817876776&autoLogAppEvents=1"
+    nonce="4evjff3k"></script>
+  <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="default"
+    data-auto-logout-link="false" data-use-continue-as="false"></div>
+
   <h1><a href="index.html">WEB</a></h1>
   <input id="night_day" type="button" value="night" onclick="
     nightDayHandler(this);
@@ -53,13 +57,13 @@
         var items = text.split(',');
         var i = 0;
         var tags = '';
-        while(i<items.length){
+        while (i < items.length) {
           var item = items[i];
           console.log(item);
           item = item.trim();
           console.log(item);
           //<li><a href="#!html" onclick="fetchPage('html')">html</a><li>
-          var tag = '<li><a href="#!'+item+'" onclick="fetchPage(\''+item+'\')">' + item + '</a></li>';
+          var tag = '<li><a href="#!' + item + '" onclick="fetchPage(\'' + item + '\')">' + item + '</a></li>';
           console.log(tag);
           tags = tags + tag;
           i = i + 1;
@@ -68,8 +72,9 @@
         document.querySelector('#nav').innerHTML = tags;
       })
     });
-
   </script>
+
+
 </body>
 
 </html>
