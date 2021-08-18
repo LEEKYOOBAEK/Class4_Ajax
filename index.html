@@ -10,6 +10,20 @@
 </head>
 
 <body>
+  <!-- Facebooklogin -->
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : '4155753817876776',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v11.0'
+        
+      });
+    };
+  </script>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+      
   <h1><a href="index.html">WEB</a></h1>
   <input id="night_day" type="button" value="night" onclick="
     nightDayHandler(this);
